@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nuria García Valdecasas Cobo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00d9ff;
+            --primary-dark: #00b8d4;
+            --bg-dark: #0a0e27;
+            --bg-card: #151b2e;
+            --text-primary: #f0f2f5;
+            --text-secondary: #c4c7cc;
+            --accent: #7c3aed;
+            --border-color: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-dark);
+            padding: 40px 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                /* Neural network nodes - cyan */
+                radial-gradient(circle at 15% 20%, rgba(0, 217, 255, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 217, 255, 0.12) 0%, transparent 30%),
+                radial-gradient(circle at 50% 60%, rgba(0, 217, 255, 0.1) 0%, transparent 35%),
+                radial-gradient(circle at 25% 80%, rgba(0, 217, 255, 0.08) 0%, transparent 28%),
+                radial-gradient(circle at 75% 15%, rgba(0, 217, 255, 0.1) 0%, transparent 32%),
+                /* Neural network nodes - purple */
+                radial-gradient(circle at 40% 10%, rgba(124, 58, 237, 0.12) 0%, transparent 30%),
+                radial-gradient(circle at 90% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 10% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 28%),
+                radial-gradient(circle at 60% 90%, rgba(124, 58, 237, 0.08) 0%, transparent 35%),
+                radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.1) 0%, transparent 30%),
+                /* Connection lines - subtle */
+                linear-gradient(135deg, transparent 0%, rgba(0, 217, 255, 0.03) 20%, transparent 40%),
+                linear-gradient(45deg, transparent 0%, rgba(124, 58, 237, 0.03) 25%, transparent 50%),
+                /* Base dark gradient */
+                linear-gradient(135deg, var(--bg-dark) 0%, #0d1220 50%, #1a1f3a 100%);
+            background-size: 
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                100% 100%,
+                200% 200%,
+                200% 200%,
+                100% 100%;
+            pointer-events: none;
+            z-index: 0;
+            animation: neuralFloat 25s ease-in-out infinite;
+            box-shadow: inset 0 0 200px rgba(0, 217, 255, 0.05),
+                        inset 0 0 300px rgba(124, 58, 237, 0.03);
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                /* Additional particle layer */
+                radial-gradient(circle at 70% 40%, rgba(0, 217, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 20% 70%, rgba(124, 58, 237, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 85%, rgba(0, 217, 255, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 35% 25%, rgba(124, 58, 237, 0.06) 0%, transparent 45%);
+            background-size: 100% 100%;
+            pointer-events: none;
+            z-index: 0;
+            animation: neuralFloat 30s ease-in-out infinite reverse;
+            opacity: 0.6;
+        }
+
+        @keyframes neuralFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            25% {
+                transform: translate(2%, -1%) scale(1.02);
+                opacity: 0.95;
+            }
+            50% {
+                transform: translate(-1%, 2%) scale(0.98);
+                opacity: 1;
+            }
+            75% {
+                transform: translate(1%, 1%) scale(1.01);
+                opacity: 0.97;
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(21, 27, 46, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 217, 255, 0.05);
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 13fr 7fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 30px;
+        }
+
+        .header-section {
+            grid-column: 1 / -1;
+            margin-bottom: 10px;
+        }
+
+        .column-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .column-right {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-left: 0;
+            padding-top: 0;
+            margin-top: 0;
+            align-items: flex-start;
+            align-content: flex-start;
+            justify-content: flex-start;
+            align-self: start;
+        }
+
+        .column-right > #foto-perfil {
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .column-right > section {
+            width: 100%;
+            margin-top: 0;
+        }
+
+        #foto-perfil {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            background: rgba(0, 217, 255, 0.1);
+            margin-top: 0;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3),
+                        inset 0 0 20px rgba(0, 217, 255, 0.1);
+            position: relative;
+        }
+
+        #foto-perfil::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        #habilidades {
+            padding-left: 0;
+            padding-top: 0;
+            margin-left: 0;
+            margin-top: 0;
+            width: 100%;
+        }
+
+        #habilidades h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        #habilidades .skills-grid {
+            padding-left: 0;
+            margin-left: 0;
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .projects-section {
+            grid-column: 1 / -1;
+            margin-top: 10px;
+        }
+
+        h1 {
+            color: var(--text-primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '>';
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .contact-item::before {
+            content: '→';
+            color: var(--primary-color);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        #perfil {
+            margin-top: 0;
+        }
+
+        #perfil h2 {
+            margin-top: 0;
+        }
+
+        #perfil p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            background: rgba(0, 217, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+
+        #contacto h2,
+        #habilidades h2,
+        #modulos-clave h2,
+        #experiencia-laboral h2 {
+            margin-top: 0;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 0;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, rgba(0, 242, 255, 0.6), rgba(124, 58, 237, 0.6));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-category:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 242, 255, 0.35);
+            transform: translateX(5px);
+        }
+
+        .skill-category:hover::before {
+            opacity: 1;
+        }
+
+        .skill-category strong {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            width: 100%;
+        }
+
+        .skill-tag {
+            background: rgba(0, 242, 255, 0.12);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(0, 242, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 242, 255, 0.2);
+            border-color: rgba(0, 242, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        #modulos-clave {
+            padding-left: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        #modulos-clave h2 {
+            margin-top: 0;
+        }
+
+        .modulo-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modulo-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, rgba(0, 242, 255, 0.6), rgba(124, 58, 237, 0.6));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modulo-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 242, 255, 0.35);
+            transform: translateX(3px);
+        }
+
+        .modulo-item:hover::before {
+            opacity: 1;
+        }
+
+        .modulo-item strong {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+
+        .modulo-item p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .education-item,
+        .experience-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-item::before,
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent));
+        }
+
+        .education-item:hover,
+        .experience-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(0, 217, 255, 0.3);
+            transform: translateX(5px);
+        }
+
+        .education-item h3,
+        .experience-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .education-item p,
+        .experience-item p {
+            color: var(--text-secondary);
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 242, 255, 0.15);
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 242, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.1);
+        }
+
+        .project-item:hover::before {
+            opacity: 1;
+        }
+
+        .project-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .project-item p {
+            color: var(--text-secondary);
+            margin: 0 0 20px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid;
+            cursor: pointer;
+        }
+
+        .project-btn-primary {
+            background: rgba(0, 242, 255, 0.15);
+            color: var(--primary-color);
+            border-color: rgba(0, 242, 255, 0.3);
+        }
+
+        .project-btn-primary:hover {
+            background: rgba(0, 242, 255, 0.25);
+            border-color: rgba(0, 242, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 242, 255, 0.2);
+        }
+
+        .project-btn-secondary {
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--accent);
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .project-btn-secondary:hover {
+            background: rgba(124, 58, 237, 0.25);
+            border-color: rgba(124, 58, 237, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+        }
+
+        .experience-item .company {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .experience-item .date {
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .experience-item ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .experience-item ul li {
+            margin: 10px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .experience-item ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
+            }
+
+            .header-section {
+                grid-column: 1;
+            }
+
+            .column-left,
+            .column-right {
+                grid-column: 1;
+            }
+
+            .projects-section {
+                grid-column: 1;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                gap: 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .skill-category {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-item {
+                min-height: auto;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                background: white;
+                box-shadow: none;
+                padding: 20px;
+                border: none;
+            }
+            h1, h2, h3 {
+                color: #000;
+            }
+            p, li {
+                color: #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <h1>Nuria García Valdecasas Cobo</h1>
+            <p class="subtitle">Data Scientist & Mathematics Student</p>
+        </div>
+
+        <div class="column-left">
+            <section id="contacto">
+                <h2>Contacto</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Teléfono:</strong> 55 8614 1016
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong> nuria.090904@gmail.com
+                    </div>
+                </div>
+            </section>
+
+            <section id="perfil">
+                <h2>Perfil</h2>
+                <p>Estudiante apasionada de ciencia de datos y matemáticas aplicadas con un sólido entendimiento en la gestión y el análisis de datos. Especializada en la limpieza, automatización de procesos y modelado para garantizar la calidad y fiabilidad de la información. En constante aprendizaje de nuevas herramientas, mi objetivo es aplicar el análisis de datos para construir soluciones que generen insights y promuevan la mejora continua.</p>
+            </section>
+
+            <section id="experiencia-laboral">
+                <h2>Experiencia Laboral</h2>
+                <div class="experience-item">
+                    <h3>Becaria Administrativa (Centro de Tesis)</h3>
+                    <p class="company">ITAM (Instituto Tecnológico Autónomo de México)</p>
+                    <p class="date">Enero 2025 - Actualidad</p>
+                    <ul>
+                        <li>Recepción y Validación de Datos de Entrada: validación inicial de documentos, verificando que la información y los formatos cumplan con los criterios establecidos por la normatividad universitaria.</li>
+                        <li>Gestión de la Trazabilidad: mantenimiento y actualización de los registros de estado de cada expediente en el sistema interno, garantizando la trazabilidad del proceso en tiempo real.</li>
+                        <li>Control de Calidad del Proceso: detección proactiva de inconsistencias o falta de documentación para minimizar errores y retrasos en el proceso final.</li>
+                        <li>Organización y Estándares: control y gestión de inventario de documentos físicos, aplicando criterios de estandarización para el orden de los registros.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="column-right">
+            <div id="foto-perfil"></div>
+            <section id="habilidades">
+                <h2>Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <strong>Programación</strong>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">pandas</span>
+                            <span class="skill-tag">numpy</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">HTML</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Big Data</strong>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PySpark</span>
+                            <span class="skill-tag">Hadoop</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Bases de Datos</strong>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Cassandra</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Herramientas</strong>
+                        <div class="skill-tags">
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">LaTeX</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="modulos-clave">
+                <h2>Módulos Clave</h2>
+                <div class="modulo-item">
+                    <strong>Big Data y Ecosistemas Distribuidos</strong>
+                    <p>Principios de la computación distribuida, y uso práctico de herramientas como PySpark y Hadoop para el procesamiento de grandes volúmenes de datos.</p>
+                </div>
+                <div class="modulo-item">
+                    <strong>Bases de Datos Avanzadas</strong>
+                    <p>Diseño, modelado y administración de bases de datos relacionales (PostgreSQL) y no relacionales (MongoDB, Cassandra).</p>
+                </div>
+                <div class="modulo-item">
+                    <strong>Programación Aplicada de Datos</strong>
+                    <p>Uso de Python (pandas, numpy) y Java para tareas de análisis, modelado y automatización.</p>
+                </div>
+                <div class="modulo-item">
+                    <strong>Comunicación Técnica</strong>
+                    <p>Desarrollo de documentación formal y reportes científicos utilizando el sistema de LaTeX.</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="proyectos-automaticos" class="projects-section">
+            <h2>Proyectos</h2>
+            <div class="projects-grid" id="projects-container">
+                <!-- Los proyectos se cargarán aquí automáticamente -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Función para cargar proyectos desde GitHub
+        async function loadGitHubProjects() {
+            const username = 'NuriaGarciaV';
+            const apiUrl = `https://api.github.com/users/${username}/repos`;
+            const projectsContainer = document.getElementById('projects-container');
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Error al cargar los repositorios');
+                }
+
+                const repos = await response.json();
+
+                // Filtrar repositorios: no forks y con descripción
+                const filteredRepos = repos.filter(repo => 
+                    !repo.fork && repo.description && repo.description.trim() !== ''
+                );
+
+                // Ordenar por fecha de actualización (más recientes primero)
+                filteredRepos.sort((a, b) => 
+                    new Date(b.updated_at) - new Date(a.updated_at)
+                );
+
+                // Limpiar el contenedor
+                projectsContainer.innerHTML = '';
+
+                // Generar HTML para cada repositorio
+                filteredRepos.forEach(repo => {
+                    const projectItem = document.createElement('div');
+                    projectItem.className = 'project-item';
+
+                    // Título del proyecto
+                    const title = document.createElement('h3');
+                    title.textContent = repo.name;
+                    projectItem.appendChild(title);
+
+                    // Descripción
+                    const description = document.createElement('p');
+                    description.textContent = repo.description;
+                    projectItem.appendChild(description);
+
+                    // Botones
+                    const buttonsDiv = document.createElement('div');
+                    buttonsDiv.className = 'project-buttons';
+
+                    // Botón Ver Demo (GitHub Pages)
+                    const demoUrl = `https://${username.toLowerCase()}.github.io/${repo.name}/`;
+                    const demoButton = document.createElement('a');
+                    demoButton.href = demoUrl;
+                    demoButton.className = 'project-btn project-btn-primary';
+                    demoButton.textContent = 'Ver Demo';
+                    demoButton.target = '_blank';
+                    demoButton.rel = 'noopener noreferrer';
+                    buttonsDiv.appendChild(demoButton);
+
+                    // Botón Ver Código
+                    const codeButton = document.createElement('a');
+                    codeButton.href = repo.html_url;
+                    codeButton.className = 'project-btn project-btn-secondary';
+                    codeButton.textContent = 'Código';
+                    codeButton.target = '_blank';
+                    codeButton.rel = 'noopener noreferrer';
+                    buttonsDiv.appendChild(codeButton);
+
+                    projectItem.appendChild(buttonsDiv);
+                    projectsContainer.appendChild(projectItem);
+                });
+
+                // Si no hay proyectos, mostrar un mensaje
+                if (filteredRepos.length === 0) {
+                    projectsContainer.innerHTML = '<p style="color: var(--text-secondary); grid-column: 1 / -1; text-align: center; padding: 20px;">No hay proyectos disponibles en este momento.</p>';
+                }
+
+            } catch (error) {
+                console.error('Error al cargar proyectos:', error);
+                projectsContainer.innerHTML = '<p style="color: var(--text-secondary); grid-column: 1 / -1; text-align: center; padding: 20px;">Error al cargar los proyectos. Por favor, intenta más tarde.</p>';
+            }
+        }
+
+        // Cargar proyectos cuando la página esté lista
+        document.addEventListener('DOMContentLoaded', loadGitHubProjects);
+    </script>
+</body>
+</html>
+
